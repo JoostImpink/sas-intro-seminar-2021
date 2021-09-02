@@ -63,13 +63,6 @@ proc sql;
 quit;
 
 
-/* this can be combined by the way in a single query */
-proc sql;
-	create table doubles2 as
-	select * from getf_4 where key in 
-		(select key from getf_4 group by key having count(*) > 1);
-quit;
-
 /* force unique records if you don't care about which of the double is the correct one
 probably better approach is to keep both, try to get data for both, and see if there are still
 any duplicates left  */
@@ -77,7 +70,7 @@ any duplicates left  */
 /* for now, let's drop the duplicates to our dataset has the same length */
 proc sort data=getf_4 nodupkey; by gvkey fyear;run;
 
-/* crsp-ibes gives 41,348 ibes tickers (out of 102,631 firmyears) */
+/* crsp-ibes gives 45,972 ibes tickers (out of 114,041 firmyears) */
 data getf_4nonmis;
 set getf_4;
 if missing(ibes_ticker) eq 0;
@@ -112,13 +105,13 @@ proc sql;
 	and missing(b.ticker) eq 0;
 quit;
 
-/* iclink gives 46,535 ibes tickers */
+/* iclink gives 51,621 ibes tickers */
 data getf_6;
 set getf_5;
 if missing(iclink_ibes) eq 0;
 run;
 
-/* iclink gives 45,678 ibes tickers with match score of 0 and 1 (arbitrary)*/
+/* iclink gives 50,777 ibes tickers with match score of 0 and 1 (arbitrary)*/
 data getf_6;
 set getf_5;
 if missing(iclink_ibes) eq 0;
