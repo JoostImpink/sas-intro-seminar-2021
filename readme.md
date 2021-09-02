@@ -1,4 +1,4 @@
-# SAS Seminar - September 2020
+# SAS Seminar - September 2021
 
 ## Matching of commonly used datasets
 
@@ -15,11 +15,16 @@ Additionally, also the ticker symbol and Cusip/sedol are commonly used, as well 
 
 In this seminar we will look into matching these datasets:
 
-#### Header vs historical values - Compustat - [1_compustat.sas](1_compustat.sas)
+#### Using Rsubmit (local SAS) - [1_rsubmit.sas](1_rsubmit.sas)
 
-#### Matching Compustat with Audit Analytics -  [2_audit_analytics.sas](2_audit_analytics.sas)
+#### Header vs historical values - Compustat - [2_compustat.sas](2_compustat.sas)
 
-#### Matching Compustat - CRSP - IBES - [3_ibes.sas](3_ibes.sas)
+#### Matching Compustat with CRSP - [3_crsp.sas](3_crsp.sas)
+
+#### Matching Compustat with Audit Analytics -  [4_audit_analytics.sas](4_audit_analytics.sas)
+
+#### Matching Compustat with IBES - [5_ibes.sas](5_ibes.sas)
+
 
 ## SAS Studio
 
